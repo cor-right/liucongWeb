@@ -35,18 +35,20 @@
 
 		  <div class="list-block">
 		    <ul>
-		      <li class="item-content">
-		        <div class="item-inner">
-		          <div class="item-title">专业排名</div>
-		          <div class="item-after">{{scord.subjectRank}}</div>
-		        </div>
-		      </li>
-		      <li class="item-content">
-		        <div class="item-inner">
-		          <div class="item-title">班级排名</div>
-		          <div class="item-after">{{scord.classRank}}</div>
-		        </div>
-		      </li>
+          <li class="item-content">
+            <div class="item-media"><i class="icon icon-f7"></i></div>
+            <div class="item-inner">
+              <div class="item-title">专业排名</div>
+              <div class="item-after">{{scord.subjectRank}}</div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-media"><i class="icon icon-f7"></i></div>
+            <div class="item-inner">
+              <div class="item-title">班级排名</div>
+              <div class="item-after">{{scord.classRank}}</div>
+            </div>
+          </li>
 		    </ul>
 		  </div>
 
@@ -203,5 +205,6 @@
 	}
   .content {
     top:5%;
+    height: 95%;
   }
 </style>

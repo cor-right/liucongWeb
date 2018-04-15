@@ -46,33 +46,36 @@
             <!-- 注销按钮 -->
             <user-logout></user-logout>
         </ul>
-      </div>
 
         <!-- footer -->
-      <div style="position: relative;height: 5%">
-        <nav class="bar">
-          <router-link class="tab-item external " v-bind:class="{active : false }" to="/score">
-            <span class="icon icon-home"></span>
-            <!--<span class="tab-label">学分绩点</span>-->
-            <span class="tab-label">&emsp;</span>
-          </router-link>
-          <router-link class="tab-item external" v-bind:class="{active : false  }"  to="/table">
-            <span class="icon icon-computer"></span>
-            <span class="tab-label">&emsp;</span>
-            <!--<span class="tab-label">课程表</span>-->
-          </router-link>
-          <router-link class="tab-item external" v-bind:class="{active : false }"  to="/room">
-            <span class="icon icon-edit"></span>
-            <span class="tab-label">&emsp;</span>
-            <!--<span class="tab-label">自习室</span>-->
-          </router-link>
-          <router-link class="tab-item external" v-bind:class="{active : false }"  to="/user">
-            <span class="tab-label">  </span>
-            <span class="icon icon-me"></span>
-            <!--<span class="tab-label">个人中心</span>-->
-          </router-link>
-        </nav>
+        <div style="position: relative;height: 5%">
+          <nav class="bar">
+            <router-link class="tab-item external " v-bind:class="{active : false }" to="/score">
+              <span class="icon icon-home"></span>
+              <!--<span class="tab-label">学分绩点</span>-->
+              <span class="tab-label">&emsp;</span>
+            </router-link>
+            <router-link class="tab-item external" v-bind:class="{active : false  }"  to="/table">
+              <span class="icon icon-computer"></span>
+              <span class="tab-label">&emsp;</span>
+              <!--<span class="tab-label">课程表</span>-->
+            </router-link>
+            <router-link class="tab-item external" v-bind:class="{active : false }"  to="/room">
+              <span class="icon icon-edit"></span>
+              <span class="tab-label">&emsp;</span>
+              <!--<span class="tab-label">自习室</span>-->
+            </router-link>
+            <router-link class="tab-item external" v-bind:class="{active : false }"  to="/user">
+              <span class="tab-label">  </span>
+              <span class="icon icon-me"></span>
+              <!--<span class="tab-label">个人中心</span>-->
+            </router-link>
+          </nav>
+        </div>
+
       </div>
+
+
 
 	</div>
 
@@ -126,17 +129,24 @@
 	  <div class="content-block">
 	    <p>帮助</p>
 	    <hr />
-	    <p>该WEBAPP致力于</p><p>满足学生日常学习生活的需求</p>
-	    <hr/>
-	    <p>学生在绑定教务处之后</p>
-	    <p>当前学期和学生姓名</p>
-	    <p>都是爬虫去教务处上自动爬取</p>
-	    <hr/>
-	    <p>空闲教室信息</p>
-	    <p>个人课表</p>
-	    <p>也都是爬虫去教务处上爬取</p>
+      <p>-- 软件定位 --</p>
+      <p>方便同学和老师</p>
+      <p>日常的学习和生活</p>
 	    <hr />
-	    <p></p>
+      <p>-- 软件功能 --</p>
+      <p>实时查询当前个人学籍成绩信息</p>
+      <p>实时查询当日各教学楼内空闲教室</p>
+      <p>实时查询任意学期任意日期的课程</p>
+	    <hr />
+      <p>-- 常见问题 --</p>
+      <p>如您对系统有任何问题或建议</p>
+      <p>请联系系统管理员</p>
+      <p>@刘聪</p>
+      <hr/>
+      <p>-- 声明 --</p>
+      <p>本软件不做任何商业用途</p>
+      <p>版权所有 违法必究</p>
+	    <hr />
 	    <br/>
 	    <p><a href="#" class="close-popup">确定</a></p>
 	  </div>
@@ -149,9 +159,10 @@
 	    <hr />
 	    <p>版本号</p>
 	    <p>0.1.0.0325</p>
+	    <hr />
 	    <p>作者</p>
 	    <p>@刘聪</p>
-	    <br/>
+      <hr/>
 	    <p><a href="#" class="close-popup">确认</a></p>
 	  </div>
 	</div>
@@ -378,8 +389,8 @@
 
 .content {
 	background-image: url("../assets/LanSeJingYu.jpg");
-  top: 8%;
-  height: 90%;
+  top: 6%;
+  height: 100%;
 }
 
 #loginregisterdiv{
@@ -402,7 +413,7 @@ ul {
 }
 
 .header {
-  height: 10%;
+  height: 6%;
 }
 
 .header header {
