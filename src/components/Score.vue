@@ -1,8 +1,10 @@
 <template>
 	<div>
 		<div class="content">
+
 		  <div class="list-block">
 		  	<div class="content-block-title">总览</div>
+
 		    <ul>
 		      <li class="item-content">
 		        <div class="item-media"><i class="icon icon-f7"></i></div>
@@ -26,8 +28,11 @@
 		        </div>
 		      </li>
 		    </ul>
+
 		  </div>
+
 		  <div class="content-block-title">排名</div>
+
 		  <div class="list-block">
 		    <ul>
 		      <li class="item-content">
@@ -44,7 +49,9 @@
 		      </li>
 		    </ul>
 		  </div>
+
 		  <div class="content-block-title">学分</div>
+
 		  <div class="list-block">
 		    <ul>
 		      <li class="item-content item-link">
@@ -84,15 +91,42 @@
 		      </li>
 		    </ul>
 		  </div>
-		  <br />
+      <!-- nav -->
+      <div style="position: relative;height: 5%">
+        <nav class="bar">
+          <router-link class="tab-item external " v-bind:class="{active : false }" to="/score">
+            <span class="icon icon-home"></span>
+            <!--<span class="tab-label">学分绩点</span>-->
+            <span class="tab-label">&emsp;</span>
+          </router-link>
+          <router-link class="tab-item external" v-bind:class="{active : false  }"  to="/table">
+            <span class="icon icon-computer"></span>
+            <span class="tab-label">&emsp;</span>
+            <!--<span class="tab-label">课程表</span>-->
+          </router-link>
+          <router-link class="tab-item external" v-bind:class="{active : false }"  to="/room">
+            <span class="icon icon-edit"></span>
+            <span class="tab-label">&emsp;</span>
+            <!--<span class="tab-label">自习室</span>-->
+          </router-link>
+          <router-link class="tab-item external" v-bind:class="{active : false }"  to="/user">
+            <span class="tab-label">  </span>
+            <span class="icon icon-me"></span>
+            <!--<span class="tab-label">个人中心</span>-->
+          </router-link>
+        </nav>
+      </div>
 		</div>
+    <!-- end of list blocks div -->
+
 	</div>
-	
+
 </template>
 
 <script>
 	import axios from 'axios'
-	
+  import Footer from "@/page/Footer"
+
 	export default {
 		name : "Score",
 		data () {
@@ -110,9 +144,11 @@
 				    allScore : "0",
 				},
 				title : "Welcome Page",
-				
 			}
 		},
+    components : {
+		  "page-footer" : Footer
+    },
 		computed : {
 			getToken : function () {
 				var arr, reg = new RegExp("(^| )token=([^;]*)(;|$)");
@@ -165,4 +201,7 @@
 		margin: 10px 0px;
 		border: 0px;
 	}
+  .content {
+    top:5%;
+  }
 </style>

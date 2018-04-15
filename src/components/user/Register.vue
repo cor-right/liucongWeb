@@ -21,7 +21,7 @@
 						      </li>
 						      <li>
 						        <div class="item-content">
-						          <div class="item-media"><i class="icon icon-form-password"></i></div>
+						          <div class="item-media "><i class="icon icon-form-password"></i></div>
 						          <div class="item-inner">
 						            <div class="item-title label" ><span class="icon icon-edit"></span></div>
 						            <div class="item-input">
@@ -52,7 +52,7 @@
 
 <script>
 	import axios from 'axios'
-	
+
 	export default {
 		name : "Register",
 		data () {

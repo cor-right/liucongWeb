@@ -1,23 +1,26 @@
 <!-- 用户中心页面-->
 <template>
 	<div id="loginregisterdiv">
-		<div class="content">
+
+
+
 			<!-- 标题栏 -->
 			<!--<header class="bar bar-nav">
 			  <h1 class="title"></h1>
 			</header>-->
-			<div>
-				<header class="bar bar-nav">
-					 <h1 class="title"><font style="font-family: 'Sitka Banner';">NEFU&nbsp;学习机</font></h1>
-				</header>
-			</div>
+      <div class="header">
+        <header class="bar bar-nav">
+           <h1 class="title"><font style="font-family: 'Sitka Banner';">NEFU&nbsp;学习机</font></h1>
+        </header>
+      </div>
 			<!-- 内容展示 -->
+      <div class="content">
 				<!-- 未登录时展示 -->
 				<div v-show="getToken == ''"  id="notlogincontent" style="">
 					<div>
 						<img src="../assets/book1.jpg" class="roundimage"  style="align-content: center;width: 20%;height:60%;"/>
-					</div>	
-					<transition name="fade">	
+					</div>
+					<transition name="fade">
 						<!--<p v-if="!showLoginPage.show" >-->
 						<p align="center">
 							<a href="#" style="width: 50%;"  class="button button-round button-fill " @click="loginPopUpPullUp"><font style="font-size: 22px;">登陆</font></a>
@@ -27,28 +30,55 @@
 					</transition>
 				</div>
 			<!-- 已登陆时的界面 -->
-			<div v-show="getToken != ''">
+			<div v-show="getToken != ''" class="list-block" >
 				<!-- 按钮组-->
 			  <!--<div class="content-block-title"></div>-->
-			  <div class="list-block" >
-			    <ul>
-			    	<!--<li><a href="#" class="item-link list-button"><span style="color : black;">[ {{getCurUsername}} ]</span></a></li>-->
-			    	<!--<li><a href="#" class="item-link list-button">更新课表</a></li>-->
-			    	<li><a href="#" class="item-link list-button" @click="checkStudentInfo">查看教务处信息</a></li>
-			    	<li><a href="#" class="item-link list-button "  @click="tightStudentInfo">绑定教务处信息</a></li>
-			    	<li><a href="#" class="item-link list-button "  @click="changeCurrentWeekNum">修改当前周</a></li>
-					<li><a href="#" class="item-link list-button " @click="refreshStudentClassTable">更新个人课表</a></li>
-			      	<li><a href="#" class="item-link list-button " @click="resetuserpw">重置用户密码</a></li>
-			      	<li><a href="#" class="item-link list-button" @click="helpPopPullUp">帮助</a></li>
-			      	<li><a href="#" class="item-link list-button" @click="aboutPopPullUp">关于</a></li>
-			      	<!-- 注销按钮 -->
-			      	<user-logout></user-logout>	
-			    </ul>
-		    </div>
+        <ul>
+          <!--<li><a href="#" class="item-link list-button"><span style="color : black;">[ {{getCurUsername}} ]</span></a></li>-->
+          <!--<li><a href="#" class="item-link list-button">更新课表</a></li>-->
+          <li><a href="#" class="item-link list-button" @click="checkStudentInfo">查看教务处信息</a></li>
+          <li><a href="#" class="item-link list-button "  @click="tightStudentInfo">绑定教务处信息</a></li>
+          <li><a href="#" class="item-link list-button "  @click="changeCurrentWeekNum">修改当前周</a></li>
+        <li><a href="#" class="item-link list-button " @click="refreshStudentClassTable">更新个人课表</a></li>
+            <li><a href="#" class="item-link list-button " @click="resetuserpw">重置用户密码</a></li>
+            <li><a href="#" class="item-link list-button" @click="helpPopPullUp">帮助</a></li>
+            <li><a href="#" class="item-link list-button" @click="aboutPopPullUp">关于</a></li>
+            <!-- 注销按钮 -->
+            <user-logout></user-logout>
+        </ul>
       </div>
+
+        <!-- footer -->
+      <div style="position: relative;height: 5%">
+        <nav class="bar">
+          <router-link class="tab-item external " v-bind:class="{active : false }" to="/score">
+            <span class="icon icon-home"></span>
+            <!--<span class="tab-label">学分绩点</span>-->
+            <span class="tab-label">&emsp;</span>
+          </router-link>
+          <router-link class="tab-item external" v-bind:class="{active : false  }"  to="/table">
+            <span class="icon icon-computer"></span>
+            <span class="tab-label">&emsp;</span>
+            <!--<span class="tab-label">课程表</span>-->
+          </router-link>
+          <router-link class="tab-item external" v-bind:class="{active : false }"  to="/room">
+            <span class="icon icon-edit"></span>
+            <span class="tab-label">&emsp;</span>
+            <!--<span class="tab-label">自习室</span>-->
+          </router-link>
+          <router-link class="tab-item external" v-bind:class="{active : false }"  to="/user">
+            <span class="tab-label">  </span>
+            <span class="icon icon-me"></span>
+            <!--<span class="tab-label">个人中心</span>-->
+          </router-link>
+        </nav>
+      </div>
+
 	</div>
-	
-	
+
+
+
+
 	<!--按钮组end-->
     <!-- tight student info popup -->
 	<div class="popup" id="tightstudentinfo">
@@ -85,7 +115,6 @@
 		      </li>
 	      </ul>
 	     </div>
-	    </p>
       <!--end content-->
       <p><a href="#" class="close-popup" @click="resetStudentInfo" >取消</a></p>
       <p><a href="#" class="close-popup" @click="submitStudentInfo" >提交</a></p>
@@ -146,7 +175,7 @@
 	import Logout from "@/components/user/Logout"
 	import Register from "@/components/user/Register"
 	import Footer from "@/page/Footer"
-	
+
 	export default {
 		name : "UserCenter",
 		data () {
@@ -165,7 +194,7 @@
 			"user-logout" : Logout,
 			"user-register" : Register,
 			"page-footer" : Footer,
-		}, 
+		},
 		computed : {
 			getToken : function () {
 				var arr, reg = new RegExp("(^| )token=([^;]*)(;|$)");
@@ -207,7 +236,7 @@
 		    	axios.post("/student/info", {
 		    		"studentid" : this.studentid,
 		    		"studentpw" : this.studentpw
-		    	},  {	
+		    	},  {
 			  		headers : {
 			  			"token" : token
 			  		}
@@ -233,14 +262,14 @@
 			  		if (response.data.code == 1)
 			  			$.toast(response.data.message);
 			  		else {
-			  			$.alert('<hr/><font style="font-family:\'Sitka Heading\'">N E F U</font> <hr/><div class="list-block" style="font-family:\'楷体\'"><ul><li class="item-content"><div class="item-media"><i class="icon icon-f7"></i></div>' + 
-						        	'<div class="item-inner"><div class="item-title">学号</div><div class="item-after">' + response.data.data.studentid + '</div></div></li>' + 
+			  			$.alert('<hr/><font style="font-family:\'Sitka Heading\'">N E F U</font> <hr/><div class="list-block" style="font-family:\'楷体\'"><ul><li class="item-content"><div class="item-media"><i class="icon icon-f7"></i></div>' +
+						        	'<div class="item-inner"><div class="item-title">学号</div><div class="item-after">' + response.data.data.studentid + '</div></div></li>' +
 						        	'<li class="item-content"><div class="item-media"><i class="icon icon-f7"></i></div><div class="item-inner">' +
-						            '<div class="item-title">姓名</div><div class="item-after">' + response.data.data.studentname + '</div></div></li>' + 
+						            '<div class="item-title">姓名</div><div class="item-after">' + response.data.data.studentname + '</div></div></li>' +
 						            '<li class="item-content"><div class="item-media"><i class="icon icon-f7"></i></div><div class="item-inner">' +
-						            '<div class="item-title">当前学期</div><div class="item-after">' + response.data.data.curTerm + '</div></div></li>' + 
+						            '<div class="item-title">当前学期</div><div class="item-after">' + response.data.data.curTerm + '</div></div></li>' +
 						            '<li class="item-content"><div class="item-media"><i class="icon icon-f7"></i></div><div class="item-inner">' +
-						            '<div class="item-title">当前周次</div><div class="item-after">第' + response.data.data.curWeek + '周</div></div></li>' + 
+						            '<div class="item-title">当前周次</div><div class="item-after">第' + response.data.data.curWeek + '周</div></div></li>' +
 						    		'</ul><br/><hr/>最后更新时间<br/>' + response.data.data.lastRefresh + '<hr/></div>');
 //			  			$.alert("<hr/>N E F U <hr/>"
 //			  				+ "学号：" + response.data.data.studentid + "<br/>"
@@ -326,7 +355,7 @@
 		   }
 		},
 		watch : {
-			
+
 		},
 		created () {
 		}
@@ -348,17 +377,35 @@
 }
 
 .content {
-	background-image: url("../assets/LanSeJingYu.jpg"); 
+	background-image: url("../assets/LanSeJingYu.jpg");
+  top: 8%;
+  height: 90%;
 }
 
 #loginregisterdiv{
 }
 
-.roundimage{ 
-        margin-top: 100px; 
-        width:200px; 
-        height:200px; 
-        border-radius:200px; 
-    }
+.list-block {
+}
+
+header {
+}
+
+ul {
+}
+
+.roundimage{
+        margin-top: 100px;
+        width:200px;
+        height:200px;
+        border-radius:200px;
+}
+
+.header {
+  height: 10%;
+}
+
+.header header {
+}
 </style>
 

@@ -1,8 +1,7 @@
 
 <template>
-  <div id="app" style="font-family: '楷体'">
+  <div id="app" style="font-family: '楷体';height: 100%">
     <router-view v-bind:net="net"  />
-	 <page-footer></page-footer>
   </div>
 </template>
 
@@ -41,7 +40,7 @@ export default {
 		 if (cval != null)
 		  document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
 		},
-		
+
 		　　
   },
 
@@ -59,10 +58,8 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-page-footer {
-	position:fixed;
-	bottom: 0px;
-	right:0px;
+router-view{
+  height: 100%;
 }
 </style>
 

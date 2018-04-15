@@ -10,7 +10,7 @@
 		name : "Logout",
 		data () {
 			return {
-				
+
 			}
 		},
 		computed : {
@@ -41,6 +41,12 @@
 						},2100);
 					} else {
 						$.toast(response.data.message);
+            document.cookie = "token=";	// 清除浏览器中的token的cookie
+            document.cookie = "headurl=";
+            document.cookie = "username=";
+            setTimeout(function() {
+              routerer.push({ path: '/' });	// 页面重新加载
+            },2100);
 					}
 				})
 			}
@@ -48,7 +54,7 @@
 		created() {
 		}
 	}
-	
+
 </script>
 
 <style>

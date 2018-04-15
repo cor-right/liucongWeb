@@ -9,7 +9,7 @@ Vue.config.productionTip = false
 Vue.use(axios)
 Vue.prototype.$axios = axios
 
-axios.defaults.baseURL="http://60.205.215.237:8081/api"
+axios.defaults.baseURL="http://10.90.6.251:8095/api"
 
 /* eslint-disable no-new */
 new Vue({
@@ -17,5 +17,5 @@ new Vue({
   router,
   components: { App },
   template: '<App/>',
-  
+
 })

@@ -1,6 +1,6 @@
 <template>
   <table border="1"  style="" class="theTable">
-  	<tr style="height: 10%;color: black;"> 
+  	<tr style="color: black;">
   		<td style="width: 9%;"></td>
   		<td class="weektitletd" >周一</td>
   		<td class="weektitletd">周二</td>
@@ -51,12 +51,12 @@
 
 <script>
 	import axios from 'axios'
-	
+
 	export default {
 		name : "Table",
 		data () {
 			return {
-				
+
 			}
 		},
 		props : [
@@ -107,14 +107,14 @@
 						var teacher = response.data.data.teacher.replace(",", "<br/>");
 						var classroom = response.data.data.classRoom;
 						var week = response.data.data.week;
-						$.alert('<hr/><font style="font-family:\'Sitka Heading\'">N E F U</font> <hr/><div class="list-block" style="font-family:\'楷体\'"><ul><li class="item-content"><div class="item-media"><i class="icon icon-f7"></i></div>' + 
-						        	'<div class="item-inner"><div class="item-after">' + classname + '</div></div></li>' + 
+						$.alert('<hr/><font style="font-family:\'Sitka Heading\'">N E F U</font> <hr/><div class="list-block" style="font-family:\'楷体\'"><ul><li class="item-content"><div class="item-media"><i class="icon icon-f7"></i></div>' +
+						        	'<div class="item-inner"><div class="item-after">' + classname + '</div></div></li>' +
 						        	'<li class="item-content"><div class="item-media"><i class="icon icon-f7"></i></div><div class="item-inner">' +
-						            '<div class="item-after">' + teacher + '</div></div></li>' + 
+						            '<div class="item-after">' + teacher + '</div></div></li>' +
 						            '<li class="item-content"><div class="item-media"><i class="icon icon-f7"></i></div><div class="item-inner">' +
-						            '<div class="item-after">' + classroom + '</div></div></li>' + 
+						            '<div class="item-after">' + classroom + '</div></div></li>' +
 						            '<li class="item-content"><div class="item-media"><i class="icon icon-f7"></i></div><div class="item-inner">' +
-						            '<div class="item-after">' + week + '</div></div></li>' + 
+						            '<div class="item-after">' + week + '</div></div></li>' +
 						    		'</ul><br/><hr/></div>');
 					}
 					return true;
@@ -122,7 +122,7 @@
 			}
 		},
 		created () {
-			// 
+			//
 			this.getCurWeekClassTable();
 		}
 	}
@@ -130,26 +130,21 @@
 
 <style>
 	.theTable {
-		background-image: url("../../assets/littletarget.jpg"); 
-		width: 100%;
-		height: 720px;
-		overflow: scroll;
+		background-image: url("../../assets/littletarget.jpg");
 		/*word-wrap:break-word;*/
 	},
 	.tdHeaderFont {
-		font-size: calc(15px);
+		font-size: 13px;
 	},
 	.tablebodyTR {
-		height: 12%;
-		width: 9%;
 		color: black;
-		font-size: calc(14px);
+		font-size: 13px;
 	}
 	.weektitletd {
 		width: 13%;
 		height: 4%;
 	}
 	.bodyTD {
-		font-size: 16px;
+		font-size: 12px;
 	}
 </style>

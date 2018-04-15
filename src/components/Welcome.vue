@@ -1,19 +1,19 @@
 <template>
 <div >
 	<div>
-		<img src="../assets/dog.jpg" style="align-content: center;width: 95%;height:70%;"/>
+		<img src="../assets/dog.jpg" style="align-content: center;width: 70%;"/>
 	</div>
 </div>
 </template>
 
 <script>
 	import Footer from "@/page/Footer"
-	
+
 export default {
 	name : "Welcome",
 	data () {
 		return {
-			
+
 		}
 	},
 	methods : {
